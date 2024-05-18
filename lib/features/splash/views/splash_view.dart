@@ -34,17 +34,12 @@ class _SplashViewState extends State<SplashView> {
                 Assets.imagesSplash,
               ),
             ),
-            Positioned(
-              top: 740,
-              left: 256,
-              child: Container(
-                width: 280,
-                height: 204,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFB0EBB4).withOpacity(.7),
-                  shape: BoxShape.circle,
-                ),
-              ),
+            const Align(
+              alignment: Alignment.bottomRight,
+              child: Image(
+                  image: AssetImage(
+                Assets.imagesSplashShadowPng,
+              )),
             ),
           ],
         ),

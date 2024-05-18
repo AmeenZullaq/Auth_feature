@@ -3,11 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_colors.dart';
 
 abstract class AppStyles {
+  /// App TextStyles ...
   static TextStyle medium16Cabin = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeight.w500,
     fontFamily: 'Cabin',
-    color: AppColors.transparent,
+    color: AppColors.green5B0,
   );
   static TextStyle medium48Cabin = TextStyle(
     fontSize: 48.sp,
@@ -18,7 +19,7 @@ abstract class AppStyles {
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
     fontFamily: 'Cabin',
-    color: AppColors.transparent,
+    color: AppColors.green5B0,
   );
   static TextStyle medium14Cabin = TextStyle(
     fontSize: 14.sp,
@@ -44,12 +45,13 @@ abstract class AppStyles {
     fontSize: 16.sp,
     fontWeight: FontWeight.w400,
     fontFamily: 'Montaga',
-    color: AppColors.darkGreen,
+    color: AppColors.green014,
   );
   static TextStyle regular13Mantaga = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeight.w400,
     fontFamily: 'Montaga',
+    color: AppColors.green014,
   );
   static TextStyle regular12Mantaga = TextStyle(
     fontSize: 12.sp,
@@ -65,5 +67,21 @@ abstract class AppStyles {
     fontSize: 22.sp,
     fontWeight: FontWeight.w400,
     fontFamily: 'Montaga',
+  );
+
+  /// outLineInputBoreder styles ...
+  static OutlineInputBorder errorBorder = OutlineInputBorder(
+    borderRadius: BorderRadius.circular(10),
+    borderSide: BorderSide(
+      color: Colors.red.withOpacity(.5),
+      width: 1,
+    ),
+  );
+  static OutlineInputBorder border = OutlineInputBorder(
+    borderRadius: BorderRadius.circular(10),
+    borderSide: const BorderSide(
+      color: Color(0xFFD7DDDB),
+      width: 1,
+    ),
   );
 }
