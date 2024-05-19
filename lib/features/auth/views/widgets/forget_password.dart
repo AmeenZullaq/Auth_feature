@@ -19,7 +19,7 @@ class ForgetPassword extends StatelessWidget {
           GestureDetector(
             onTap: () {},
             child: Text(
-              'Forget Password?',
+              'Forget Password ?',
               style: AppStyles.regular14Cabin.copyWith(
                 color: AppColors.green014,
               ),

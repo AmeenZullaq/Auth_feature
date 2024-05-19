@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:healthy_food_app/core/configs/validators.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_text_form_field.dart';
 
-class Mobilefield extends StatelessWidget {
-  const Mobilefield({
+class UserNameField extends StatelessWidget {
+  const UserNameField({
     super.key,
-    required this.mobileController,
+    required this.userNameController,
   });
-  final TextEditingController mobileController;
+  final TextEditingController userNameController;
 
   @override
   Widget build(BuildContext context) {
     return AppTextFormField(
-      controller: mobileController,
-      hint: 'Mobile Number',
-      keyboardType: TextInputType.phone,
+      controller: userNameController,
+      hint: 'User Name',
+      keyboardType: TextInputType.name,
       validator: (value) {
-        return AppValidators.validatePhoneNumber(value);
+        return AppValidators.validateUserName(value);
       },
     );
   }

@@ -1,61 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:healthy_food_app/core/reusable_widgets/padding.dart';
+import 'package:healthy_food_app/features/auth/controller/login_controller.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/email_field.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/mobile_field.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/password_field.dart';
 
-class LoginFields extends StatefulWidget {
+class LoginFields extends StatelessWidget {
   const LoginFields({super.key});
 
   @override
-  State<LoginFields> createState() => _LoginFieldsState();
-}
-
-class _LoginFieldsState extends State<LoginFields> {
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  late TextEditingController emailController;
-  late TextEditingController mobileController;
-  late TextEditingController passwordController;
-
-  @override
-  void initState() {
-    super.initState();
-    emailController = TextEditingController();
-    mobileController = TextEditingController();
-    passwordController = TextEditingController();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    emailController.dispose();
-    mobileController.dispose();
-    passwordController.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    /// I will create Binding class later
+    /// Now i am just checking
+    final LoginController loginController = Get.put(LoginController());
     return SymetricPadding(
       horizontal: 36,
       child: Form(
-        key: formKey,
+        key: loginController.formKey,
         child: Column(
           children: [
             EmailField(
-              controller: emailController,
+              emailController: loginController.emailController,
             ),
             SizedBox(
               height: 20.h,
             ),
             Mobilefield(
-              controller: mobileController,
+              mobileController: loginController.mobileController,
             ),
             SizedBox(
               height: 20.h,
             ),
             PasswordField(
-              controller: passwordController,
+              passwordController: loginController.passwordController,
             ),
           ],
         ),

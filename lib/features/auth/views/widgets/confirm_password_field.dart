@@ -1,30 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:healthy_food_app/core/configs/validators.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_colors.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_text_form_field.dart';
 
-class PasswordField extends StatefulWidget {
-  const PasswordField({
+class ConfirmPasswordField extends StatefulWidget {
+  const ConfirmPasswordField({
     super.key,
-    required this.passwordController,
+    required this.confirmPasswordController,
   });
-  final TextEditingController passwordController;
+  final TextEditingController confirmPasswordController;
 
   @override
-  State<PasswordField> createState() => _PasswordFieldState();
+  State<ConfirmPasswordField> createState() => _PasswordFieldState();
 }
 
-class _PasswordFieldState extends State<PasswordField> {
+class _PasswordFieldState extends State<ConfirmPasswordField> {
   bool obscureText = true;
   @override
   Widget build(BuildContext context) {
     return AppTextFormField(
-      controller: widget.passwordController,
-      hint: 'Password',
+      controller: widget.confirmPasswordController,
+      hint: 'Confirm Password',
       keyboardType: TextInputType.visiblePassword,
       validator: (value) {
-        return AppValidators.validatePassword(value);
+        // AppValidators.validateConfirmPassword(value);
       },
       obscureText: obscureText,
       suffixIcon: IconButton(

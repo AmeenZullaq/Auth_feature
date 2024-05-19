@@ -35,6 +35,7 @@ abstract class AppStyles {
     fontSize: 12.sp,
     fontWeight: FontWeight.w500,
     fontFamily: 'Cabin',
+    color: AppColors.green014,
   );
   static TextStyle bold22Cabin = TextStyle(
     fontSize: 22.sp,

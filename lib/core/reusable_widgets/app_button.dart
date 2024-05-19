@@ -19,9 +19,8 @@ class AppButton extends StatelessWidget {
   final Color? textColo;
   final Color? buttonColor;
   final Color? borderColor;
-
   final double? width;
-  final void Function()? onTap;
+  final Function()? onTap;
   final double? borderWidth;
 
   @override
