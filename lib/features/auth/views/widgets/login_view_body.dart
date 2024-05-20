@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
-import 'package:healthy_food_app/core/reusable_widgets/padding.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_colors.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
 import 'package:healthy_food_app/core/utilis/constants/assets.dart';
@@ -28,16 +27,12 @@ class LoginViewBody extends StatelessWidget {
         SizedBox(
           height: 20.h,
         ),
-        SymetricPadding(
-          horizontal: 36,
-          child: AppButton(
-            onTap: () {
-              if (loginController.formKey.currentState!.validate()) {
-                print('login correct validation =========================');
-              } else {}
-            },
-            text: 'Log in',
-          ),
+        AppButton(
+          onTap: () {
+            if (loginController.formKey.currentState!.validate()) {
+            } else {}
+          },
+          text: 'Log in',
         ),
         SizedBox(
           height: 5.h,
@@ -46,16 +41,13 @@ class LoginViewBody extends StatelessWidget {
         SizedBox(
           height: 75.h,
         ),
-        SymetricPadding(
-          horizontal: 36,
-          child: AppButton(
-            onTap: () {
-              Get.offNamed(Routes.singUpView);
-            },
-            text: 'Create new account',
-            borderWidth: 2,
-            buttonColor: AppColors.green5B9.withOpacity(.3),
-          ),
+        AppButton(
+          onTap: () {
+            Get.offNamed(Routes.singUpView);
+          },
+          text: 'Create new account',
+          borderWidth: 2,
+          buttonColor: AppColors.green5B9.withOpacity(.3),
         ),
         SizedBox(
           height: 50.h,

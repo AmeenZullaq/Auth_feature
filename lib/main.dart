@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_colors.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
-import 'package:healthy_food_app/features/auth/views/singup_view.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(

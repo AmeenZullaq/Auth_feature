@@ -1,4 +1,5 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:healthy_food_app/features/auth/views/authenticated_view.dart';
 import 'package:healthy_food_app/features/auth/views/login_view.dart';
 import 'package:healthy_food_app/features/auth/views/singup_view.dart';
 import 'package:healthy_food_app/features/splash/views/splash_view.dart';
@@ -24,9 +25,9 @@ abstract class Pages {
       name: Routes.singUpView,
       page: () => const SingUpView(),
     ),
-    // GetPage(
-    //   name: Routes.authenticatedView,
-    //   page: () => const AuthenticatedView(),
-    // ),
+    GetPage(
+      name: Routes.authenticatedView,
+      page: () => const AuthenticatedView(),
+    ),
   ];
 }

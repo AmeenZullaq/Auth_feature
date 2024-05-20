@@ -8,4 +8,14 @@ class SingUpController extends GetxController {
   TextEditingController passwordController = TextEditingController();
   TextEditingController userNameController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
+
+  @override
+  void onClose() {
+    emailController.dispose();
+    mobileController.dispose();
+    passwordController.dispose();
+    userNameController.dispose();
+    confirmPasswordController.dispose();
+    super.onClose();
+  }
 }

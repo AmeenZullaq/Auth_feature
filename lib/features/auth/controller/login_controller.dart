@@ -7,4 +7,12 @@ class LoginController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController mobileController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+  @override
+  void onClose() {
+    emailController.dispose();
+    mobileController.dispose();
+    passwordController.dispose();
+    super.onClose();
+  }
 }

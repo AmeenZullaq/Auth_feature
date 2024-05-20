@@ -27,7 +27,7 @@ class AppTextFormField extends StatelessWidget {
       controller: controller,
       validator: validator,
       cursorColor: const Color(0xFFD7DDDB),
-      cursorErrorColor: Colors.red.withOpacity(.5),
+      cursorErrorColor: const Color(0xFFD7DDDB),
       cursorWidth: 2,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(

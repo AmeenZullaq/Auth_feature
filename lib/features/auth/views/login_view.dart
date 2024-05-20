@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthy_food_app/core/reusable_widgets/padding.dart';
 import 'package:healthy_food_app/core/utilis/constants/assets.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/login_view_body.dart';
 
@@ -20,7 +21,10 @@ class LogInView extends StatelessWidget {
               ),
             ),
             SingleChildScrollView(
-              child: LoginViewBody(),
+              child: SymetricPadding(
+                horizontal: 30,
+                child: LoginViewBody(),
+              ),
             ),
           ],
         ),

@@ -13,6 +13,7 @@ class AppButton extends StatelessWidget {
     this.onTap,
     this.borderWidth,
     this.borderColor,
+    this.height,
   });
 
   final String text;
@@ -20,6 +21,7 @@ class AppButton extends StatelessWidget {
   final Color? buttonColor;
   final Color? borderColor;
   final double? width;
+  final double? height;
   final Function()? onTap;
   final double? borderWidth;
 
@@ -28,7 +30,7 @@ class AppButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 38.h,
+        height: height ?? 38.h,
         width: width ?? double.infinity,
         alignment: Alignment.center,
         decoration: BoxDecoration(

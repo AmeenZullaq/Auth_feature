@@ -45,8 +45,8 @@ class SingUpFields extends StatelessWidget {
             height: 20.h,
           ),
           ConfirmPasswordField(
-            confirmPasswordController:
-                singUpController.confirmPasswordController,
+            confirmPasswordController:singUpController.confirmPasswordController,
+            passwordController: singUpController.passwordController,
           ),
         ],
       ),

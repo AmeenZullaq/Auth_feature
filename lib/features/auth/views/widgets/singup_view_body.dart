@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
+import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
 import 'package:healthy_food_app/core/utilis/constants/assets.dart';
 import 'package:healthy_food_app/features/auth/controller/singup_controller.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/already_have_account.dart';
@@ -42,7 +43,7 @@ class SingUpViewBody extends StatelessWidget {
           text: 'Sing up',
           onTap: () {
             if (singUpController.formKey.currentState!.validate()) {
-              print('sing up correct validation ============================');
+              Get.toNamed(Routes.authenticatedView);
             } else {}
           },
         ),
