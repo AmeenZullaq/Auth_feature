@@ -7,23 +7,23 @@ class AppButton extends StatelessWidget {
   const AppButton({
     super.key,
     required this.text,
-    this.textColo,
     this.buttonColor,
     this.width,
     this.onTap,
     this.borderWidth,
     this.borderColor,
     this.height,
+    this.textStyle,
   });
 
   final String text;
-  final Color? textColo;
   final Color? buttonColor;
   final Color? borderColor;
   final double? width;
   final double? height;
   final Function()? onTap;
   final double? borderWidth;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class AppButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: AppStyles.regular16Mantaga,
+          style: textStyle ?? AppStyles.regular16Mantaga,
         ),
       ),
     );

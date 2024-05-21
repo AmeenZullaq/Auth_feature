@@ -20,6 +20,14 @@ class SingUpView extends StatelessWidget {
                 ),
               ),
             ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Image(
+                image: AssetImage(
+                  Assets.imagesSingupShadow2,
+                ),
+              ),
+            ),
             SingleChildScrollView(
               child: SymetricPadding(
                 horizontal: 30,

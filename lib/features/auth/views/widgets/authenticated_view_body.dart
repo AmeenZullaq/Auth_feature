@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
-import 'package:healthy_food_app/core/utilis/constants/app_colors.dart';
-import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
+import 'package:healthy_food_app/core/utilis/helper_function/showing_dialog.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/authenticated_app_bar.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/header_text.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/otp_verification.dart';
+import 'package:healthy_food_app/features/auth/views/widgets/success_dialog.dart';
+import 'package:healthy_food_app/features/auth/views/widgets/time_verification.dart';
 
 class AuthenticatedViewBody extends StatelessWidget {
   const AuthenticatedViewBody({super.key});
@@ -27,30 +28,18 @@ class AuthenticatedViewBody extends StatelessWidget {
         SizedBox(
           height: 20.h,
         ),
-        Align(
-          alignment: Alignment.center,
-          child: Text(
-            '03:00',
-            style: AppStyles.regular16Mantaga.copyWith(
-              color: AppColors.green014,
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 20.h,
-        ),
-        Text(
-          'Send again',
-          style: AppStyles.regular16Mantaga.copyWith(
-            color: AppColors.green014,
-          ),
-        ),
+        const TimeVerification(),
         SizedBox(
           height: 60.h,
         ),
         AppButton(
           text: 'Confirm',
-          onTap: () {},
+          onTap: () async {
+            await showingDialog(
+              context,
+              dialog: const SuccessDialog(),
+            );
+          },
         ),
         SizedBox(
           height: 50.h,

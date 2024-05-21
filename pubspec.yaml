@@ -28,8 +28,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  awesome_dialog: ^3.2.1
   cupertino_icons: ^1.0.6
-  drop_shadow_image: ^0.9.1
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.9.1

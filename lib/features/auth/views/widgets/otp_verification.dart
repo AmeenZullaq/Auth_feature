@@ -13,7 +13,7 @@ class OtpVerification extends StatelessWidget {
       length: 6,
       validator: (value) {
         return AppValidators.validateOtp(value);
-      },
+    },
       pinContentAlignment: Alignment.center,
       obscureText: false,
       obscuringWidget: const Text('*'),

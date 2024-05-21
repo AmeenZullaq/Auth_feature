@@ -11,11 +11,24 @@ abstract class AppStyles {
     fontFamily: 'Cabin',
     color: AppColors.green5B0,
   );
+  static TextStyle medium20Cabin = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Cabin',
+    color: AppColors.green014,
+  );
+  static TextStyle medium32Cabin = TextStyle(
+    fontSize: 32.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Cabin',
+    color: AppColors.green014,
+  );
   static TextStyle medium48Cabin = TextStyle(
     fontSize: 48.sp,
     fontWeight: FontWeight.w500,
     fontFamily: 'Cabin',
   );
+
   static TextStyle regular14Cabin = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
@@ -59,6 +72,7 @@ abstract class AppStyles {
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
     fontFamily: 'Montaga',
+    color: AppColors.green014,
   );
   static TextStyle regular20Mantaga = TextStyle(
     fontSize: 20.sp,
@@ -92,7 +106,7 @@ abstract class AppStyles {
     ),
   );
 
-  /// PinPut OTP style
+  /// PinPut OTP style...
   static PinTheme defaultPinTheme = PinTheme(
     height: 39.h,
     width: 42.w,
@@ -117,6 +131,7 @@ abstract class AppStyles {
       ),
     ),
   );
+
   static PinTheme errorPinTheme = PinTheme(
     height: 39.h,
     width: 42.w,

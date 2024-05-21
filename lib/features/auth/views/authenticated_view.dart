@@ -16,7 +16,7 @@ class AuthenticatedView extends StatelessWidget {
               alignment: Alignment.bottomRight,
               child: Image(
                 image: AssetImage(
-                  Assets.imagesAuthHealthy,
+                  Assets.imagesAuthShadow,
                 ),
               ),
             ),
