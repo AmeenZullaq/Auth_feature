@@ -43,7 +43,7 @@ class _PasswordFieldState extends State<ConfirmPasswordField> {
           obscureText
               ? Icons.visibility_off_outlined
               : Icons.visibility_outlined,
-          color: AppColors.green5B0,
+          color: AppColors.springRain,
           size: 20.r,
         ),
       ),

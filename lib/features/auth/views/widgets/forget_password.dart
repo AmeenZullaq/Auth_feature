@@ -18,7 +18,7 @@ class ForgetPassword extends StatelessWidget {
           child: Text(
             'Forget Password ?',
             style: AppStyles.regular14Cabin.copyWith(
-              color: AppColors.green014,
+              color: AppColors.camarone,
             ),
           ),
         ),

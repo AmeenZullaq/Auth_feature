@@ -44,13 +44,13 @@ class _MyImageState extends State<MyImage> {
                 color: AppColors.white,
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: AppColors.green014,
+                  color: AppColors.camarone,
                   width: 1.5,
                 ),
               ),
               child: Icon(
                 CupertinoIcons.camera,
-                color: AppColors.green014,
+                color: AppColors.camarone,
                 size: 45.r,
               ),
             ),

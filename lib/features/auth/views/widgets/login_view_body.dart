@@ -47,7 +47,7 @@ class LoginViewBody extends StatelessWidget {
           },
           text: 'Create new account',
           borderWidth: 2,
-          buttonColor: AppColors.green5B9.withOpacity(.3),
+          buttonColor: AppColors.celadon.withOpacity(.3),
         ),
         SizedBox(
           height: 50.h,

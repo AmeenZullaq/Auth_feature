@@ -14,7 +14,7 @@ class FalseDialog extends StatelessWidget {
       icon: Image.asset(
         width: 87.w,
         height: 82.h,
-        color: AppColors.greenFA0,
+        color: AppColors.summerGreen,
         Assets.imagesSorry2,
       ),
       content: Column(

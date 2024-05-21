@@ -24,7 +24,7 @@ class AlreadyHaveAccount extends StatelessWidget {
           child: Text(
             'Log in',
             style: AppStyles.medium12Cabin.copyWith(
-              color: AppColors.grey340,
+              color: AppColors.forstGreen,
             ),
           ),
         ),

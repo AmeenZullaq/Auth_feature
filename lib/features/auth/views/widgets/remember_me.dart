@@ -29,7 +29,7 @@ class _RememberMeState extends State<RememberMe> {
               color: AppColors.white,
               shape: BoxShape.circle,
               border: Border.all(
-                color: AppColors.green014.withOpacity(.6),
+                color: AppColors.camarone.withOpacity(.6),
                 width: 1.5,
               ),
             ),
@@ -37,7 +37,7 @@ class _RememberMeState extends State<RememberMe> {
                 ? Icon(
                     Icons.check,
                     size: 13.r,
-                    color: AppColors.green014.withOpacity(.6),
+                    color: AppColors.camarone.withOpacity(.6),
                   )
                 : null,
           ),

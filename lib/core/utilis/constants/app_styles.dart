@@ -9,19 +9,19 @@ abstract class AppStyles {
     fontSize: 16.sp,
     fontWeight: FontWeight.w500,
     fontFamily: 'Cabin',
-    color: AppColors.green5B0,
+    color: AppColors.springRain,
   );
   static TextStyle medium20Cabin = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.w500,
     fontFamily: 'Cabin',
-    color: AppColors.green014,
+    color: AppColors.camarone,
   );
   static TextStyle medium32Cabin = TextStyle(
     fontSize: 32.sp,
     fontWeight: FontWeight.w500,
     fontFamily: 'Cabin',
-    color: AppColors.green014,
+    color: AppColors.camarone,
   );
   static TextStyle medium48Cabin = TextStyle(
     fontSize: 48.sp,
@@ -33,7 +33,7 @@ abstract class AppStyles {
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
     fontFamily: 'Cabin',
-    color: AppColors.green5B0,
+    color: AppColors.springRain,
   );
   static TextStyle medium14Cabin = TextStyle(
     fontSize: 14.sp,
@@ -49,7 +49,7 @@ abstract class AppStyles {
     fontSize: 12.sp,
     fontWeight: FontWeight.w500,
     fontFamily: 'Cabin',
-    color: AppColors.green014,
+    color: AppColors.camarone,
   );
   static TextStyle bold22Cabin = TextStyle(
     fontSize: 22.sp,
@@ -60,19 +60,19 @@ abstract class AppStyles {
     fontSize: 16.sp,
     fontWeight: FontWeight.w400,
     fontFamily: 'Montaga',
-    color: AppColors.green014,
+    color: AppColors.camarone,
   );
   static TextStyle regular13Mantaga = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeight.w400,
     fontFamily: 'Montaga',
-    color: AppColors.green014,
+    color: AppColors.camarone,
   );
   static TextStyle regular12Mantaga = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
     fontFamily: 'Montaga',
-    color: AppColors.green014,
+    color: AppColors.camarone,
   );
   static TextStyle regular20Mantaga = TextStyle(
     fontSize: 20.sp,
@@ -126,7 +126,7 @@ abstract class AppStyles {
     decoration: BoxDecoration(
       shape: BoxShape.circle,
       border: Border.all(
-        color: AppColors.green014,
+        color: AppColors.camarone,
         width: 1.8,
       ),
     ),

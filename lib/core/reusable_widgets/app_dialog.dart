@@ -25,7 +25,7 @@ class AppDialog extends StatelessWidget {
       shadowColor: AppColors.black,
       actionsOverflowAlignment: OverflowBarAlignment.center,
       contentTextStyle: AppStyles.medium16Cabin.copyWith(
-        color: AppColors.green014,
+        color: AppColors.camarone,
       ),
       icon: icon,
       content: content,

@@ -34,11 +34,11 @@ class AppButton extends StatelessWidget {
         width: width ?? double.infinity,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: buttonColor ?? AppColors.green5B9,
+          color: buttonColor ?? AppColors.celadon,
           borderRadius: BorderRadius.circular(50),
           border: Border.all(
             width: borderWidth ?? 1,
-            color: borderColor ?? AppColors.greenFA0,
+            color: borderColor ?? AppColors.summerGreen,
           ),
         ),
         child: Text(

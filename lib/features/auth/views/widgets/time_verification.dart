@@ -16,7 +16,7 @@ class TimeVerification extends StatelessWidget {
           child: Text(
             '03:00',
             style: AppStyles.regular16Mantaga.copyWith(
-              color: AppColors.green014,
+              color: AppColors.camarone,
             ),
           ),
         ),
@@ -26,7 +26,7 @@ class TimeVerification extends StatelessWidget {
         Text(
           'Send again',
           style: AppStyles.regular16Mantaga.copyWith(
-            color: AppColors.green014,
+            color: AppColors.camarone,
           ),
         ),
       ],

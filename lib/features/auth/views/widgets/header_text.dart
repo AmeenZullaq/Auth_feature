@@ -14,7 +14,7 @@ class HeaderText extends StatelessWidget {
         Text(
           'Verification Code',
           style: AppStyles.regular22Mantaga.copyWith(
-            color: AppColors.green014,
+            color: AppColors.camarone,
           ),
         ),
         SizedBox(

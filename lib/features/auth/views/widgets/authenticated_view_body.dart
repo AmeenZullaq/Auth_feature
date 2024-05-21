@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
-import 'package:healthy_food_app/core/utilis/helper_function/showing_dialog.dart';
+import 'package:healthy_food_app/core/utilis/helper_functions/showing_dialog.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/authenticated_app_bar.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/header_text.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/otp_verification.dart';

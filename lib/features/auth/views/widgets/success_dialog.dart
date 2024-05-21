@@ -32,7 +32,7 @@ class SuccessDialog extends StatelessWidget {
             ),
             child: Icon(
               Icons.check,
-              color: AppColors.green5B0,
+              color: AppColors.springRain,
               size: 36.r,
             ),
           ),
@@ -60,13 +60,13 @@ class SuccessDialog extends StatelessWidget {
           Text(
             'Congratulations! You have been',
             style: AppStyles.medium18Cabin.copyWith(
-              color: AppColors.grey6B6,
+              color: AppColors.nobel,
             ),
           ),
           Text(
             'successfully authenticated',
             style: AppStyles.medium18Cabin.copyWith(
-              color: AppColors.grey6B6,
+              color: AppColors.nobel,
             ),
           ),
         ],
