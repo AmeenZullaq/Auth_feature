@@ -50,7 +50,7 @@ class LogoutDialog extends StatelessWidget {
           text: 'Yes, Log Me out',
           textStyle: AppStyles.regular12Mantaga,
           onTap: () {
-            Get.offAllNamed(Routes.logInView);
+            Get.offAllNamed(Pages.logInView);
           },
         ),
       ],

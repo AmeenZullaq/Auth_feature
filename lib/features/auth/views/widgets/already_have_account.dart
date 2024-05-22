@@ -19,7 +19,7 @@ class AlreadyHaveAccount extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Get.offNamed(Routes.logInView);
+            Get.offNamed(Pages.logInView);
           },
           child: Text(
             'Log in',

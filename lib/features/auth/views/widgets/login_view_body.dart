@@ -5,7 +5,7 @@ import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_colors.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
 import 'package:healthy_food_app/core/utilis/constants/assets.dart';
-import 'package:healthy_food_app/features/auth/controller/login_controller.dart';
+import 'package:healthy_food_app/features/auth/controllers/login_controller.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/forget_password.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/login_fields.dart';
 
@@ -14,9 +14,7 @@ class LoginViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /// I will create Binding class later
-    /// Now i am just checking
-    final LoginController loginController = Get.put(LoginController());
+    final LoginController loginController = Get.find<LoginController>();
     return Column(
       children: [
         Image.asset(
@@ -43,7 +41,7 @@ class LoginViewBody extends StatelessWidget {
         ),
         AppButton(
           onTap: () {
-            Get.offNamed(Routes.singUpView);
+            Get.offNamed(Pages.singUpView);
           },
           text: 'Create new account',
           borderWidth: 2,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:healthy_food_app/core/utilis/constants/app_colors.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
+import 'package:healthy_food_app/core/utilis/constants/app_theme.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,11 +16,9 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            scaffoldBackgroundColor: AppColors.white,
-          ),
+          theme: AppTheme.themeData,
           getPages: Pages.getPages,
-          initialRoute: Routes.splashView,
+          initialRoute: Pages.splashView,
         );
       },
     );

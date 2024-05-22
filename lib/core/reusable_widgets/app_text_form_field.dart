@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
+import 'package:healthy_food_app/core/utilis/constants/app_theme.dart';
 
 class AppTextFormField extends StatelessWidget {
   const AppTextFormField({
@@ -43,10 +44,10 @@ class AppTextFormField extends StatelessWidget {
         ),
         fillColor: const Color(0xFFFAFFF8),
         filled: true,
-        enabledBorder: AppStyles.border,
-        focusedBorder: AppStyles.border,
-        errorBorder: AppStyles.errorBorder,
-        focusedErrorBorder: AppStyles.errorBorder,
+        enabledBorder: AppTheme.border,
+        focusedBorder: AppTheme.border,
+        errorBorder: AppTheme.errorBorder,
+        focusedErrorBorder: AppTheme.errorBorder,
       ),
     );
   }

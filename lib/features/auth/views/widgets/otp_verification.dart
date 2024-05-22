@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:healthy_food_app/core/configs/validators.dart';
-import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_instance/get_instance.dart';
+import 'package:healthy_food_app/core/services/validators.dart';
+import 'package:healthy_food_app/core/utilis/constants/app_theme.dart';
+import 'package:healthy_food_app/features/auth/controllers/verifivation_controller.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpVerification extends StatelessWidget {
@@ -8,20 +11,23 @@ class OtpVerification extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final VerificationController authenticatedController =
+        Get.find<VerificationController>();
     return Pinput(
+      controller: authenticatedController.otpController,
       crossAxisAlignment: CrossAxisAlignment.center,
       length: 6,
       validator: (value) {
         return AppValidators.validateOtp(value);
-    },
+      },
       pinContentAlignment: Alignment.center,
       obscureText: false,
       obscuringWidget: const Text('*'),
       keyboardType: TextInputType.text,
-      defaultPinTheme: AppStyles.defaultPinTheme,
-      focusedPinTheme: AppStyles.defaultPinTheme,
-      submittedPinTheme: AppStyles.submittedPinTheme,
-      errorPinTheme: AppStyles.errorPinTheme,
+      defaultPinTheme: AppTheme.defaultPinTheme,
+      focusedPinTheme: AppTheme.defaultPinTheme,
+      submittedPinTheme: AppTheme.submittedPinTheme,
+      errorPinTheme: AppTheme.errorPinTheme,
     );
   }
 }

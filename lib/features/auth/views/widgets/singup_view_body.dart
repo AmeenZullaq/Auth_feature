@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
 import 'package:healthy_food_app/core/utilis/constants/assets.dart';
-import 'package:healthy_food_app/features/auth/controller/singup_controller.dart';
+import 'package:healthy_food_app/features/auth/controllers/singup_controller.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/already_have_account.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/my_image.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/singup_fields.dart';
@@ -14,9 +14,7 @@ class SingUpViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /// I will create Binding class later
-    /// Now i am just checking
-    final SingUpController singUpController = Get.put(SingUpController());
+    final SingUpController singUpController = Get.find<SingUpController>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -43,7 +41,7 @@ class SingUpViewBody extends StatelessWidget {
           text: 'Sing up',
           onTap: () {
             if (singUpController.formKey.currentState!.validate()) {
-              Get.toNamed(Routes.authenticatedView);
+              Get.toNamed(Pages.authenticatedView);
             } else {}
           },
         ),
