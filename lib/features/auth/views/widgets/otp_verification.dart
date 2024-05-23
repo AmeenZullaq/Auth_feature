@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:healthy_food_app/core/services/validators.dart';
-import 'package:healthy_food_app/core/utilis/constants/app_theme.dart';
+import 'package:healthy_food_app/core/utilis/constants/theme.dart';
 import 'package:healthy_food_app/features/auth/controllers/verifivation_controller.dart';
 import 'package:pinput/pinput.dart';
 

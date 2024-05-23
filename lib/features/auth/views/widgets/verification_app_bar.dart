@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:healthy_food_app/core/utilis/constants/assets.dart';
 
-class AuthenticatedAppBar extends StatelessWidget {
-  const AuthenticatedAppBar({super.key});
+class VerificationAppBar extends StatelessWidget {
+  const VerificationAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {

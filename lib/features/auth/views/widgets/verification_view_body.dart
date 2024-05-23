@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
-import 'package:healthy_food_app/core/utilis/helper/showing_dialog.dart';
-import 'package:healthy_food_app/features/auth/views/widgets/authenticated_app_bar.dart';
+import 'package:healthy_food_app/core/utilis/functions/showing_dialog.dart';
+import 'package:healthy_food_app/features/auth/views/widgets/verification_app_bar.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/header_text.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/otp_verification.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/success_dialog.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/time_verification.dart';
 
-class AuthenticatedViewBody extends StatelessWidget {
-  const AuthenticatedViewBody({super.key});
+class VerificationViewBody extends StatelessWidget {
+  const VerificationViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const AuthenticatedAppBar(),
+        const VerificationAppBar(),
         SizedBox(
           height: 12.h,
         ),
