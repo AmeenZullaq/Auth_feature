@@ -11,6 +11,7 @@ class FalseDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppDialog(
+      iconPadding: const EdgeInsets.all(8),
       icon: Image.asset(
         width: 87.w,
         height: 82.h,

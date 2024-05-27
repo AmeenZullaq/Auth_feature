@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
-import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
+import 'package:healthy_food_app/core/utilis/constants/app_colors.dart';
+import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
 import 'package:healthy_food_app/core/utilis/constants/assets.dart';
 import 'package:healthy_food_app/features/auth/controllers/singup_controller.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/already_have_account.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/my_image.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/singup_fields.dart';
+import 'package:healthy_food_app/features/auth/views/widgets/singup_get_builder.dart';
 
 class SingUpViewBody extends StatelessWidget {
   const SingUpViewBody({super.key});
@@ -27,24 +29,26 @@ class SingUpViewBody extends StatelessWidget {
         SizedBox(
           height: 40.h,
         ),
-        const SingUpFields(),
+        SingUpFields(
+          singUpController: singUpController,
+        ),
         SizedBox(
           height: 30.h,
         ),
-        const AppButton(
+        AppButton(
+          width: 170.w,
+          height: 37.h,
+          buttonColor: AppColors.white,
+          borderColor: const Color(0xFFD7DDDB),
+          textStyle: AppStyles.medium14Cabin.copyWith(
+            color: AppColors.springRain,
+          ),
           text: 'Certificate PDF file',
         ),
         SizedBox(
           height: 40.h,
         ),
-        AppButton(
-          text: 'Sing up',
-          onTap: () {
-            if (singUpController.formKey.currentState!.validate()) {
-              Get.toNamed(Pages.authenticatedView);
-            } else {}
-          },
-        ),
+        const SingUpGetBuilder(),
         SizedBox(
           height: 5.h,
         ),

@@ -4,7 +4,7 @@ import 'package:healthy_food_app/core/utilis/constants/app_colors.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
 import 'package:pinput/pinput.dart';
 
-abstract class AppTheme {
+abstract class Themes {
   static ThemeData themeData = ThemeData(
     scaffoldBackgroundColor: AppColors.white,
   );

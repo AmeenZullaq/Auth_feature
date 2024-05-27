@@ -44,10 +44,10 @@ class AppTextFormField extends StatelessWidget {
         ),
         fillColor: const Color(0xFFFAFFF8),
         filled: true,
-        enabledBorder: AppTheme.border,
-        focusedBorder: AppTheme.border,
-        errorBorder: AppTheme.errorBorder,
-        focusedErrorBorder: AppTheme.errorBorder,
+        enabledBorder: Themes.border,
+        focusedBorder: Themes.border,
+        errorBorder: Themes.errorBorder,
+        focusedErrorBorder: Themes.errorBorder,
       ),
     );
   }

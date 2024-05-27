@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:healthy_food_app/constants.dart';
 
@@ -20,36 +19,30 @@ class ApiService {
 
   Future<Map<String, dynamic>> post({
     required String endPoint,
-    String? userName,
-    String? email,
-    String? password,
-    String? confirmPassword,
-    String? mobileNumber,
-    String? otpCode,
+    required Map<String, dynamic> data,
   }) async {
-    Map<String, dynamic> data = {};
     Map<String, dynamic> headers = {};
     Response response = await dio.post(
       '$endPoint$baseUrl',
       data: data,
-      options: Options(headers: headers),
+      options: Options(
+        headers: headers,
+      ),
     );
     return response.data;
   }
 
   Future<Map<String, dynamic>> put({
     required String endPoint,
-    String? userName,
-    String? email,
-    String? password,
-    String? mobileNumber,
+    required Map<String, dynamic> data,
   }) async {
-    Map<String, dynamic> data = {};
     Map<String, dynamic> headers = {};
     Response response = await dio.post(
       '$endPoint$base64Url',
       data: data,
-      options: Options(headers: headers),
+      options: Options(
+        headers: headers,
+      ),
     );
     return response.data;
   }

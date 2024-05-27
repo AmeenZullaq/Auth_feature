@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:healthy_food_app/features/auth/controllers/login_controller.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/email_field.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/mobile_field.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/password_field.dart';
 
 class LoginFields extends StatelessWidget {
-  const LoginFields({super.key});
+  const LoginFields({
+    super.key,
+    required this.loginController,
+  });
+  final LoginController loginController;
 
   @override
   Widget build(BuildContext context) {
-    /// I will create Binding class later
-    /// Now i am just checking
-    final LoginController loginController = Get.put(LoginController());
     return Form(
       key: loginController.formKey,
       child: Column(
@@ -25,7 +25,7 @@ class LoginFields extends StatelessWidget {
             height: 20.h,
           ),
           Mobilefield(
-            mobileController: loginController.mobileController,
+            mobileController: loginController.mobileNumberController,
           ),
           SizedBox(
             height: 20.h,

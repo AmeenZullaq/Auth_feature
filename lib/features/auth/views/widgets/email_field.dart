@@ -25,11 +25,8 @@ class EmailField extends StatelessWidget {
       hint: 'Email',
       suffixIcon: EndPadding(
         end: 16.w,
-        child: GestureDetector(
-          onTap: () {},
-          child: SvgPicture.asset(
-            Assets.imagesEditIcon,
-          ),
+        child: SvgPicture.asset(
+          Assets.imagesEditIcon,
         ),
       ),
     );

@@ -1,26 +1,29 @@
-import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:healthy_food_app/constants.dart';
 import 'package:healthy_food_app/core/errors/failure.dart';
 import 'package:healthy_food_app/core/errors/server_failure.dart';
 import 'package:healthy_food_app/core/services/api_service.dart';
-import 'package:healthy_food_app/features/auth/data/models/otp_model.dart';
+import 'package:healthy_food_app/features/auth/data/models/singup_model.dart';
+import 'package:dartz/dartz.dart';
 
-class OtpRemoteDataSource {
+class SingUpRemoteData {
   final ApiService apiService;
-  OtpRemoteDataSource(this.apiService);
+  SingUpRemoteData(this.apiService);
 
-  Future<Either<Failure, OtpModel>> otpVerification({
+  Future<Either<Failure, SingUpModel>> singUp({
+    required String userName,
     required String email,
-    required String otpCode,
+    required String password,
+    required String confirmPassword,
+    required String mobileNumber,
   }) async {
     try {
       Map<String, dynamic> data = await apiService.post(
-        endPoint: otpEndPoint,
-        email: email,
+        endPoint: singUpEndPoint,
+        data: {},
       );
       return right(
-        OtpModel.fromJson(data),
+        SingUpModel.fromJson(data),
       );
     } catch (e) {
       if (e is DioException) {

@@ -8,6 +8,7 @@ import 'package:healthy_food_app/core/utilis/constants/assets.dart';
 import 'package:healthy_food_app/features/auth/controllers/login_controller.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/forget_password.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/login_fields.dart';
+import 'package:healthy_food_app/features/auth/views/widgets/login_get_builder.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -21,17 +22,13 @@ class LoginViewBody extends StatelessWidget {
           Assets.imagesLoginHealthy,
           height: 250.h,
         ),
-        const LoginFields(),
+        LoginFields(
+          loginController: loginController,
+        ),
         SizedBox(
           height: 20.h,
         ),
-        AppButton(
-          onTap: () {
-            if (loginController.formKey.currentState!.validate()) {
-            } else {}
-          },
-          text: 'Log in',
-        ),
+        const LogInGetBuilder(),
         SizedBox(
           height: 5.h,
         ),
@@ -40,12 +37,12 @@ class LoginViewBody extends StatelessWidget {
           height: 75.h,
         ),
         AppButton(
-          onTap: () {
-            Get.offNamed(Pages.singUpView);
-          },
           text: 'Create new account',
           borderWidth: 2,
           buttonColor: AppColors.celadon.withOpacity(.3),
+          onTap: () {
+            Get.offNamed(Pages.singUpView);
+          },
         ),
         SizedBox(
           height: 50.h,

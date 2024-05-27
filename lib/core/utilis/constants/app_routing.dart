@@ -1,5 +1,7 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
-import 'package:healthy_food_app/core/bindings/auth_bindings.dart';
+import 'package:healthy_food_app/core/bindings/login_bindings.dart';
+import 'package:healthy_food_app/core/bindings/singup_bindings.dart';
+import 'package:healthy_food_app/core/bindings/verification_bindings.dart';
 import 'package:healthy_food_app/features/auth/views/verification_view.dart';
 import 'package:healthy_food_app/features/auth/views/login_view.dart';
 import 'package:healthy_food_app/features/auth/views/singup_view.dart';
@@ -9,7 +11,7 @@ abstract class Pages {
   static const String splashView = '/';
   static const String logInView = '/logInView';
   static const String singUpView = '/singUpView';
-  static const String authenticatedView = '/authenticatedView';
+  static const String vrificationView = '/verificationView';
 
   static List<GetPage<dynamic>>? getPages = [
     GetPage(
@@ -19,17 +21,17 @@ abstract class Pages {
     GetPage(
       name: Pages.logInView,
       page: () => const LogInView(),
-      binding: AuthBindings(),
+      binding: LogInBindings(),
     ),
     GetPage(
       name: Pages.singUpView,
       page: () => const SingUpView(),
-      binding: AuthBindings(),
+      binding: SingUpBindings(),
     ),
     GetPage(
-      name: Pages.authenticatedView,
+      name: Pages.vrificationView,
       page: () => const VerificationView(),
-      binding: AuthBindings(),
+      binding: VerificationBindings(),
     ),
   ];
 }

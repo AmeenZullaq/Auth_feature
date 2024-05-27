@@ -8,11 +8,13 @@ class AppDialog extends StatelessWidget {
     this.icon,
     this.content,
     this.actions,
+    this.iconPadding,
   });
 
   final Widget? icon;
   final Widget? content;
   final List<Widget>? actions;
+  final EdgeInsetsGeometry? iconPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +26,7 @@ class AppDialog extends StatelessWidget {
       surfaceTintColor: AppColors.white,
       shadowColor: AppColors.black,
       actionsOverflowAlignment: OverflowBarAlignment.center,
+      iconPadding: iconPadding ?? EdgeInsets.zero,
       contentTextStyle: AppStyles.medium16Cabin.copyWith(
         color: AppColors.camarone,
       ),

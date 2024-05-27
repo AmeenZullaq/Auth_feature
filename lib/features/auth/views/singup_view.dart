@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthy_food_app/core/reusable_widgets/padding.dart';
-import 'package:healthy_food_app/core/utilis/constants/assets.dart';
+import 'package:healthy_food_app/core/utilis/constants/app_shadows.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/singup_view_body.dart';
 
 class SingUpView extends StatelessWidget {
@@ -8,33 +8,18 @@ class SingUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: Stack(
-          children: [
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Image(
-                image: AssetImage(
-                  Assets.imagesSingupShadowPng,
-                ),
-              ),
+        child: Container(
+          decoration: BoxDecoration(
+            boxShadow: AppShadows.singUpShadow,
+          ),
+          child: const SingleChildScrollView(
+            child: SymetricPadding(
+              horizontal: 30,
+              child: SingUpViewBody(),
             ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Image(
-                image: AssetImage(
-                  Assets.imagesSingupShadow2,
-                ),
-              ),
-            ),
-            SingleChildScrollView(
-              child: SymetricPadding(
-                horizontal: 30,
-                child: SingUpViewBody(),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
