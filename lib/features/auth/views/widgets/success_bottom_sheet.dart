@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_colors.dart';
+import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
 
 class SuccessBottomSheet extends StatelessWidget {
@@ -94,7 +95,7 @@ class SuccessBottomSheet extends StatelessWidget {
             height: 32.h,
             text: 'Continue',
             onTap: () {
-              Get.back();
+              Get.offNamed(Pages.homeView);
             },
           ),
         ],

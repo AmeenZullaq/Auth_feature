@@ -16,7 +16,7 @@ class SingUpController extends GetxController {
 
   late final SingUpModel singUpUserInfo;
   late final String errMessage;
-  late AppStatus status;
+  AppStatus? status;
 
   final SingUpRemoteData singUpRemoteData = SingUpRemoteData(
     Get.find<ApiService>(),
@@ -46,6 +46,7 @@ class SingUpController extends GetxController {
 
   void validateSingUpFields() {
     if (formKey.currentState!.validate()) {
+      singUp();
     } else {}
   }
 

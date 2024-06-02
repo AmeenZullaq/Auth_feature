@@ -3,9 +3,10 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_status.dart';
+import 'package:healthy_food_app/core/utilis/functions/showing_bottom_sheet.dart';
 import 'package:healthy_food_app/core/utilis/functions/showing_dialog.dart';
 import 'package:healthy_food_app/features/auth/controllers/verifivation_controller.dart';
-import 'package:healthy_food_app/features/auth/views/widgets/success_dialog.dart';
+import 'package:healthy_food_app/features/auth/views/widgets/success_bottom_sheet.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/wrong_dialog.dart';
 
 class VerificationGetBuilder extends StatelessWidget {
@@ -22,7 +23,6 @@ class VerificationGetBuilder extends StatelessWidget {
           text: 'Confirm',
           onTap: () {
             controller.validateOtpField();
-            controller.otpVerification();
             if (controller.status == AppStatus.loading) {
               showingDialog(
                 context,
@@ -39,9 +39,9 @@ class VerificationGetBuilder extends StatelessWidget {
                 widget: const WrongDialog(),
               );
             } else if (controller.status == AppStatus.success) {
-              showingDialog(
+              showingBottomSheet(
                 context,
-                widget: const SuccessDialog(),
+                widget: const SuccessBottomSheet(),
               );
             } else {}
           },

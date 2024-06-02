@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
-import 'package:healthy_food_app/core/utilis/constants/assets.dart';
+import 'package:healthy_food_app/features/splash/views/widgets/splash_view_body.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -25,24 +25,9 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
-        child: Stack(
-          children: [
-            Center(
-              child: Image.asset(
-                Assets.imagesSplash,
-              ),
-            ),
-            const Align(
-              alignment: Alignment.bottomRight,
-              child: Image(
-                  image: AssetImage(
-                Assets.imagesSplashShadowPng,
-              )),
-            ),
-          ],
-        ),
+        child: SplashViewBody(),
       ),
     );
   }

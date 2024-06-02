@@ -11,7 +11,7 @@ class VerificationController extends GetxController {
 
   late final String errMessage;
   late final VerificationModel otpCode;
-  late AppStatus status;
+  AppStatus? status;
 
   final OtpRemoteData otpRemoteData = OtpRemoteData(
     Get.find<ApiService>(),
@@ -32,10 +32,12 @@ class VerificationController extends GetxController {
         this.otpCode = otpCode;
       },
     );
+    update();
   }
 
   void validateOtpField() {
     if (formKey.currentState!.validate()) {
+      otpVerification();
     } else {}
   }
 

@@ -3,9 +3,11 @@ class LogInModel {
   final String email;
   final String password;
   final bool? rememberMe;
+  final String token;
 
   LogInModel({
     this.rememberMe,
+    required this.token,
     required this.mobileNumber,
     required this.email,
     required this.password,
@@ -17,6 +19,7 @@ class LogInModel {
       mobileNumber: json[''],
       email: json[''],
       password: json[''],
+      token: json['token'],
     );
   }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:get/get.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
+import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_status.dart';
 import 'package:healthy_food_app/core/utilis/functions/showing_dialog.dart';
 import 'package:healthy_food_app/features/auth/controllers/login_controller.dart';
@@ -21,7 +22,6 @@ class LogInGetBuilder extends StatelessWidget {
           text: 'Log in',
           onTap: () {
             controller.validateLogInFields();
-            controller.logIn();
             if (controller.status == AppStatus.loading) {
               showingDialog(
                 context,
@@ -38,7 +38,7 @@ class LogInGetBuilder extends StatelessWidget {
                 widget: const FalseDialog(),
               );
             } else if (controller.status == AppStatus.success) {
-              // Go To Home View
+              Get.offNamed(Pages.homeView);
             } else {}
           },
         );

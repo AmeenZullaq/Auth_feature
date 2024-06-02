@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
 import 'package:healthy_food_app/core/utilis/constants/theme.dart';
 
@@ -31,9 +32,9 @@ class AppTextFormField extends StatelessWidget {
       cursorErrorColor: const Color(0xFFD7DDDB),
       cursorWidth: 2,
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.symmetric(
-          vertical: 12,
-          horizontal: 12,
+        contentPadding: EdgeInsets.symmetric(
+          vertical: 12.h,
+          horizontal: 12.w,
         ),
         hintText: hint,
         hintStyle: AppStyles.medium16Cabin,

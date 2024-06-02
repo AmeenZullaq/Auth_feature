@@ -16,6 +16,7 @@ class VerificationViewBody extends StatelessWidget {
     final VerificationController otpController =
         Get.find<VerificationController>();
     return Form(
+      key: otpController.formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

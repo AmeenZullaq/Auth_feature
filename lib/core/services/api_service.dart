@@ -8,12 +8,12 @@ class ApiService {
   ApiService(this.dio);
 
   Future<Map<String, dynamic>> get({required String endPoint}) async {
-    Response response = await dio.get('$endPoint$base64Url');
+    Response response = await dio.get('$baseUrl$endPoint');
     return response.data;
   }
 
   Future<Map<String, dynamic>> delete({required String endPoint}) async {
-    Response response = await dio.delete('$endPoint$baseUrl');
+    Response response = await dio.delete('$baseUrl$endPoint');
     return response.data;
   }
 
@@ -23,7 +23,7 @@ class ApiService {
   }) async {
     Map<String, dynamic> headers = {};
     Response response = await dio.post(
-      '$endPoint$baseUrl',
+      '$baseUrl$endPoint',
       data: data,
       options: Options(
         headers: headers,
@@ -38,7 +38,7 @@ class ApiService {
   }) async {
     Map<String, dynamic> headers = {};
     Response response = await dio.post(
-      '$endPoint$base64Url',
+      '$baseUrl$endPoint',
       data: data,
       options: Options(
         headers: headers,

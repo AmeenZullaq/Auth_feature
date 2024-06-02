@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:healthy_food_app/constants.dart';
 import 'package:healthy_food_app/core/services/api_service.dart';
+import 'package:healthy_food_app/core/services/get_storage.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_status.dart';
 import 'package:healthy_food_app/features/auth/data/data_sources/login_remote_data.dart';
 import 'package:healthy_food_app/features/auth/data/models/login_model.dart';
@@ -12,9 +14,9 @@ class LoginController extends GetxController {
   late TextEditingController mobileNumberController = TextEditingController();
   late TextEditingController passwordController = TextEditingController();
 
-  late final LogInModel logInUserInfo;
+  late final LogInModel logInModel;
   late final String errMessage;
-  late AppStatus status;
+  AppStatus? status;
 
   final LogInRemoteData logInRemoteData = LogInRemoteData(
     Get.find<ApiService>(),
@@ -32,15 +34,18 @@ class LoginController extends GetxController {
         status = AppStatus.failure;
         errMessage = failure.errMessage;
       },
-      (logInUserInfo) {
+      (logInModel) {
         status = AppStatus.success;
-        this.logInUserInfo = logInUserInfo;
+        this.logInModel = logInModel;
+        getxStorage.write(token, logInModel.token);
       },
     );
+    update();
   }
 
   void validateLogInFields() {
     if (formKey.currentState!.validate()) {
+      logIn();
     } else {}
   }
 
