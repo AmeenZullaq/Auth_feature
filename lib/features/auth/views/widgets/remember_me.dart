@@ -23,8 +23,9 @@ class _RememberMeState extends State<RememberMe> {
             });
           },
           child: Container(
-            width: 14.w,
-            height: 16.h,
+            width: 18.w,
+            height: 20.h,
+            alignment: Alignment.center,
             decoration: BoxDecoration(
               color: AppColors.white,
               shape: BoxShape.circle,
@@ -36,7 +37,7 @@ class _RememberMeState extends State<RememberMe> {
             child: isChecked
                 ? Icon(
                     Icons.check,
-                    size: 13.r,
+                    size: 15.r,
                     color: AppColors.camarone.withOpacity(.6),
                   )
                 : null,

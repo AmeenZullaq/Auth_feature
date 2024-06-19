@@ -5,6 +5,7 @@ PersistentBottomSheetController showingBottomSheet(
   required Widget widget,
 }) {
   return showBottomSheet(
+    backgroundColor: Colors.grey,
     context: context,
     builder: (context) {
       return widget;

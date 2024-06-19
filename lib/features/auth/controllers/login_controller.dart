@@ -37,7 +37,7 @@ class LoginController extends GetxController {
       (logInModel) {
         status = AppStatus.success;
         this.logInModel = logInModel;
-        getxStorage.write(token, logInModel.token);
+        getxStorage.write(kToken, logInModel.token);
       },
     );
     update();

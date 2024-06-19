@@ -18,7 +18,7 @@ class _SplashAlignTransitionState extends State<SplashAlignTransition>
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(milliseconds: 1500),
     );
     animation = AlignmentTween(
       begin: Alignment.bottomCenter,

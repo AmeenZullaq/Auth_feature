@@ -7,7 +7,7 @@ import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
 import 'package:healthy_food_app/core/utilis/constants/assets.dart';
 import 'package:healthy_food_app/features/auth/controllers/singup_controller.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/already_have_account.dart';
-import 'package:healthy_food_app/features/auth/views/widgets/my_image.dart';
+import 'package:healthy_food_app/features/auth/views/widgets/user_image.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/singup_fields.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/singup_get_builder.dart';
 
@@ -25,7 +25,7 @@ class SingUpViewBody extends StatelessWidget {
           height: 130.h,
           Assets.imagesSingupHealthy,
         ),
-        const MyImage(),
+        const UserImage(),
         SizedBox(
           height: 40.h,
         ),
@@ -36,6 +36,7 @@ class SingUpViewBody extends StatelessWidget {
           height: 30.h,
         ),
         AppButton(
+          onTap: () {}, 
           width: 170.w,
           height: 37.h,
           buttonColor: AppColors.white,

@@ -7,7 +7,7 @@ import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
 class NavigationState extends GetMiddleware {
   @override
   RouteSettings? redirect(String? route) {
-    if (getxStorage.read(token) != null) {
+    if (getxStorage.read(kToken) != null) {
       return const RouteSettings(name: Pages.homeView);
     }
     return null;
