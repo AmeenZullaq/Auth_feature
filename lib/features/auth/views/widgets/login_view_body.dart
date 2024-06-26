@@ -8,7 +8,6 @@ import 'package:healthy_food_app/core/utilis/constants/assets.dart';
 import 'package:healthy_food_app/features/auth/controllers/login_controller.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/forget_password.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/login_fields.dart';
-import 'package:healthy_food_app/features/auth/views/widgets/login_get_builder.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -28,7 +27,12 @@ class LoginViewBody extends StatelessWidget {
         SizedBox(
           height: 20.h,
         ),
-        const LogInGetBuilder(),
+        AppButton(
+          text: 'Log in',
+          onTap: () {
+            loginController.validateLogInFields();
+          },
+        ),
         SizedBox(
           height: 5.h,
         ),

@@ -4,23 +4,22 @@ import 'package:healthy_food_app/constants.dart';
 import 'package:healthy_food_app/core/errors/failure.dart';
 import 'package:healthy_food_app/core/errors/server_failure.dart';
 import 'package:healthy_food_app/core/services/api_service.dart';
-import 'package:healthy_food_app/features/auth/data/models/verification_model.dart';
+import 'package:healthy_food_app/features/auth/data/models/log_out_model.dart';
 
-class OtpRemoteData {
+class LogOutRemoteData {
   final ApiService apiService;
-  OtpRemoteData(this.apiService);
+  LogOutRemoteData(this.apiService);
 
-  Future<Either<Failure, VerificationModel>> otpVerification({
-    required String otpCode,
-  }) async {
+  Future<Either<Failure, LogOutModel>> logOutRemoteData({required String token}) async {
     try {
       Map<String, dynamic> data = await apiService.post(
-        endPoint: otpEndPoint,
-        data: {},
+        endPoint: logOutEndPoint,
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': 'Bearer $token',
+        },
       );
-      return right(
-        VerificationModel.fromJson(data),
-      );
+      return right(LogOutModel.fromJson(data));
     } catch (e) {
       if (e is DioException) {
         return left(

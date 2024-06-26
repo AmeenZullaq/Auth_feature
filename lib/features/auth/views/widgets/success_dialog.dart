@@ -38,8 +38,6 @@ class SuccessDialog extends StatelessWidget {
           ),
         ],
       ),
-     
-     
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

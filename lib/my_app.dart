@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:healthy_food_app/core/bindings/initial_bindings.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
 import 'package:healthy_food_app/core/utilis/constants/theme.dart';
@@ -17,6 +16,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, child) {
         return GetMaterialApp(
+          defaultTransition: Transition.rightToLeft,
           debugShowCheckedModeBanner: false,
           theme: Themes.themeData,
           getPages: Pages.getPages,

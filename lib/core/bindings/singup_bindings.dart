@@ -4,6 +4,9 @@ import 'package:healthy_food_app/features/auth/controllers/singup_controller.dar
 class SingUpBindings implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<SingUpController>(() => SingUpController(), fenix: true);
+    Get.lazyPut<SingUpController>(
+      () => SingUpController(),
+      fenix: true,
+    );
   }
 }

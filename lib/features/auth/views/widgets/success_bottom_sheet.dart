@@ -95,7 +95,8 @@ class SuccessBottomSheet extends StatelessWidget {
             height: 32.h,
             text: 'Continue',
             onTap: () {
-              Get.offNamed(Pages.homeView);
+              Navigator.pop(context);
+              Get.offAllNamed(Pages.homeView);
             },
           ),
         ],

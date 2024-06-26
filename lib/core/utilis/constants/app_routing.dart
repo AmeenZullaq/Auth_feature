@@ -1,4 +1,5 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:healthy_food_app/core/bindings/confirm_vode_bindings.dart';
 import 'package:healthy_food_app/core/bindings/login_bindings.dart';
 import 'package:healthy_food_app/core/bindings/singup_bindings.dart';
 import 'package:healthy_food_app/core/bindings/verification_bindings.dart';
@@ -35,7 +36,11 @@ abstract class Pages {
     GetPage(
       name: Pages.vrificationView,
       page: () => const VerificationView(),
-      binding: VerificationBindings(),
+      bindings: [
+        VerificationBindings(),
+        ConfirmCodeBindings(),
+      ],
+      // binding: VerificationBindings(),
     ),
     GetPage(
       name: Pages.homeView,

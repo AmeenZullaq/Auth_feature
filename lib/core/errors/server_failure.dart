@@ -40,6 +40,7 @@ class ServerFailure extends Failure {
         );
     }
   }
+
   factory ServerFailure.fromBadResponse({
     Response<dynamic>? response,
   }) {

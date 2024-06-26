@@ -6,18 +6,25 @@ import 'package:healthy_food_app/core/reusable_widgets/app_dialog.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_colors.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
 import 'package:healthy_food_app/core/utilis/constants/assets.dart';
+import 'package:healthy_food_app/features/auth/controllers/singup_controller.dart';
 
 class WrongDialog extends StatelessWidget {
   const WrongDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final SingUpController singUpController = Get.find<SingUpController>();
     return AppDialog(
-      icon: Image(
-        width: 66.w,
-        height: 66.h,
-        image: const AssetImage(
-          Assets.imagesWrong,
+      icon: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Image(
+          width: 66.w,
+          height: 66.h,
+          image: const AssetImage(
+            Assets.imagesWrong,
+          ),
         ),
       ),
       content: Column(
@@ -53,7 +60,8 @@ class WrongDialog extends StatelessWidget {
             color: const Color(0xFFFFFDFD),
           ),
           onTap: () {
-            Get.back();
+            singUpController.singUp();
+            Navigator.pop(context);
           },
         ),
       ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:healthy_food_app/core/services/validators.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_text_form_field.dart';
 
 class Mobilefield extends StatelessWidget {
@@ -16,7 +15,7 @@ class Mobilefield extends StatelessWidget {
       hint: 'Mobile Number',
       keyboardType: TextInputType.phone,
       validator: (value) {
-        return AppValidators.validatePhoneNumber(value);
+        // return AppValidators.validatePhoneNumber(value);
       },
     );
   }

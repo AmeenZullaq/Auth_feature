@@ -10,7 +10,7 @@ class SingUpRemoteData {
   final ApiService apiService;
   SingUpRemoteData(this.apiService);
 
-  Future<Either<Failure, SingUpModel>> singUp({
+  Future<Either<Failure, SingUpModel>> singUpRemoteData({
     required String userName,
     required String email,
     required String password,
@@ -20,7 +20,16 @@ class SingUpRemoteData {
     try {
       Map<String, dynamic> data = await apiService.post(
         endPoint: singUpEndPoint,
-        data: {},
+        headers: {
+          'Accept': 'application/json',
+        },
+        data: {
+          'user_name': userName,
+          'email': email,
+          'password': password,
+          'password_confirmation': confirmPassword,
+          'phone_number': mobileNumber,
+        },
       );
       return right(
         SingUpModel.fromJson(data),

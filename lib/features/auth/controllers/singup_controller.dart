@@ -1,30 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:healthy_food_app/constants.dart';
+import 'package:healthy_food_app/core/reusable_widgets/custom_circle_indicator.dart';
 import 'package:healthy_food_app/core/services/api_service.dart';
-import 'package:healthy_food_app/core/utilis/constants/app_status.dart';
+import 'package:healthy_food_app/core/services/get_storage.dart';
+import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
+import 'package:healthy_food_app/core/utilis/functions/showing_dialog.dart';
 import 'package:healthy_food_app/features/auth/data/data_sources/singup_remote_data.dart';
-import 'package:healthy_food_app/features/auth/data/models/singup_model.dart';
+import 'package:healthy_food_app/features/auth/views/widgets/wrong_dialog.dart';
 
 class SingUpController extends GetxController {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  late TextEditingController emailController = TextEditingController();
-  late TextEditingController mobileNumberController = TextEditingController();
-  late TextEditingController passwordController = TextEditingController();
-  late TextEditingController userNameController = TextEditingController();
-  late TextEditingController confirmPasswordController =
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController mobileNumberController = TextEditingController();
+  final TextEditingController userNameController = TextEditingController();
+  final TextEditingController confirmPasswordController =
       TextEditingController();
-
-  late final SingUpModel singUpUserInfo;
-  late final String errMessage;
-  AppStatus? status;
 
   final SingUpRemoteData singUpRemoteData = SingUpRemoteData(
     Get.find<ApiService>(),
   );
 
   Future<void> singUp() async {
-    status = AppStatus.loading;
-    var result = await singUpRemoteData.singUp(
+    showingDialog(
+      Get.context!,
+      widget: const CustomCircleIndicator(),
+    );
+    var result = await singUpRemoteData.singUpRemoteData(
       userName: userNameController.text,
       email: emailController.text,
       password: passwordController.text,
@@ -33,15 +36,18 @@ class SingUpController extends GetxController {
     );
     result.fold(
       (failure) {
-        status = AppStatus.failure;
-        errMessage = failure.errMessage;
+        Navigator.pop(Get.context!);
+        showingDialog(
+          Get.context!,
+          widget: const WrongDialog(),
+        );
       },
-      (singUpUserInfo) {
-        status = AppStatus.success;
-        this.singUpUserInfo = singUpUserInfo;
+      (singUpModel) {
+        Navigator.pop(Get.context!);
+        getxStorage.write(kToken, singUpModel.token);
+        Get.offNamed(Pages.homeView);
       },
     );
-    update();
   }
 
   void validateSingUpFields() {
@@ -60,3 +66,4 @@ class SingUpController extends GetxController {
     super.onClose();
   }
 }
+// 963 985562216

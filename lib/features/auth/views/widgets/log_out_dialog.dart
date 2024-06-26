@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:healthy_food_app/constants.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_dialog.dart';
+import 'package:healthy_food_app/core/services/get_storage.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
 import 'package:healthy_food_app/core/utilis/constants/assets.dart';
+import 'package:healthy_food_app/features/auth/controllers/log_out_controller.dart';
 
 class LogoutDialog extends StatelessWidget {
   const LogoutDialog({
@@ -14,6 +17,7 @@ class LogoutDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LogOutController logOutController = Get.find<LogOutController>();
     return AppDialog(
       icon: Image.asset(
         width: 69.w,
@@ -50,7 +54,10 @@ class LogoutDialog extends StatelessWidget {
           text: 'Yes, Log Me out',
           textStyle: AppStyles.regular12Mantaga,
           onTap: () {
-            Get.offAllNamed(Pages.logInView);
+            logOutController.logOut(
+              token: getxStorage.read(kToken),
+            );
+            Navigator.pop(context);
           },
         ),
       ],

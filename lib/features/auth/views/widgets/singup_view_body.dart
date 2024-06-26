@@ -9,7 +9,6 @@ import 'package:healthy_food_app/features/auth/controllers/singup_controller.dar
 import 'package:healthy_food_app/features/auth/views/widgets/already_have_account.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/user_image.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/singup_fields.dart';
-import 'package:healthy_food_app/features/auth/views/widgets/singup_get_builder.dart';
 
 class SingUpViewBody extends StatelessWidget {
   const SingUpViewBody({super.key});
@@ -36,7 +35,7 @@ class SingUpViewBody extends StatelessWidget {
           height: 30.h,
         ),
         AppButton(
-          onTap: () {}, 
+          onTap: () {},
           width: 170.w,
           height: 37.h,
           buttonColor: AppColors.white,
@@ -49,7 +48,12 @@ class SingUpViewBody extends StatelessWidget {
         SizedBox(
           height: 40.h,
         ),
-        const SingUpGetBuilder(),
+        AppButton(
+          text: 'Sing up',
+          onTap: () {
+            singUpController.validateSingUpFields();
+          },
+        ),
         SizedBox(
           height: 5.h,
         ),
