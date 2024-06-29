@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:healthy_food_app/constants.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
-import 'package:healthy_food_app/core/services/get_storage.dart';
 import 'package:healthy_food_app/features/auth/controllers/confirm_code_controller.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/send_again.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/verification_app_bar.dart';
@@ -34,7 +32,7 @@ class VerificationViewBody extends StatelessWidget {
           OtpField(
             otpController: confirmCodeController.otpController,
           ),
-          SizedBox(  
+          SizedBox(
             height: 20.h,
           ),
           const TimeVerification(),
@@ -48,10 +46,8 @@ class VerificationViewBody extends StatelessWidget {
           AppButton(
             text: 'Confirm',
             onTap: () {
-              confirmCodeController.confirmCode(
-                token: getxStorage.read(kToken),
-              );
-             },
+              confirmCodeController.confirmCode();
+            },
           ),
           SizedBox(
             height: 50.h,

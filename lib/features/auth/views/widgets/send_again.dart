@@ -9,11 +9,12 @@ class SendAgain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final SendVerifyCodeController forgetPasswordController =
+    final SendVerifyCodeController sendVerifyCodeController =
         Get.find<SendVerifyCodeController>();
     return GestureDetector(
       onTap: () {
-        forgetPasswordController.verifyCode();
+        sendVerifyCodeController.verifyCode();
+        sendVerifyCodeController.resetCounter();
       },
       child: Text(
         'Send again',

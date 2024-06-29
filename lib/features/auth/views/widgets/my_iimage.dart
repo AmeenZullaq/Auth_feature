@@ -29,12 +29,12 @@ class _MyImageState extends State<MyImage> {
 
   @override
   Widget build(BuildContext context) {
-    return getxStorage.read(kUserImage) != null
+    return getStorage.read(kUserImage) != null
         ? CircleAvatar(
             maxRadius: 46,
             backgroundImage: FileImage(
               File(
-                getxStorage.read(kUserImage),
+                getStorage.read(kUserImage),
               ),
             ),
           )

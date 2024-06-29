@@ -17,13 +17,13 @@ class ConfirmCodeController extends GetxController {
     Get.find<ApiService>(),
   );
 
-  Future<void> confirmCode({required String token}) async {
+  Future<void> confirmCode() async {
     showingDialog(
       Get.context!,
       widget: const CustomCircleIndicator(),
     );
     var result =
-        await confirmCodeRemoteData.confirmCodeRemoteData(token: token);
+        await confirmCodeRemoteData.confirmCodeRemoteData();
     result.fold(
       (failure) {
         Navigator.pop(Get.context!);

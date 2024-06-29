@@ -4,8 +4,6 @@ import 'package:get/get.dart';
 import 'package:healthy_food_app/constants.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_dialog.dart';
-import 'package:healthy_food_app/core/services/get_storage.dart';
-import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
 import 'package:healthy_food_app/core/utilis/constants/assets.dart';
 import 'package:healthy_food_app/features/auth/controllers/log_out_controller.dart';
@@ -54,9 +52,7 @@ class LogoutDialog extends StatelessWidget {
           text: 'Yes, Log Me out',
           textStyle: AppStyles.regular12Mantaga,
           onTap: () {
-            logOutController.logOut(
-              token: getxStorage.read(kToken),
-            );
+            logOutController.logOut();
             Navigator.pop(context);
           },
         ),

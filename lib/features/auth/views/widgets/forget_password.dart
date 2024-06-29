@@ -13,7 +13,7 @@ class ForgetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final SendVerifyCodeController sendVerifyCodeController =
-        Get.find<SendVerifyCodeController>();
+    Get.find<SendVerifyCodeController>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -22,6 +22,7 @@ class ForgetPassword extends StatelessWidget {
           onTap: () {
             Get.toNamed(Pages.vrificationView);
             sendVerifyCodeController.verifyCode();
+            sendVerifyCodeController.resetCounter();
           },
           child: Text(
             'Forget Password ?',

@@ -11,6 +11,6 @@ Future pickImage({required ImageSource source}) async {
   );
   if (selectedImage != null) {
     image = File(selectedImage.path);
-    getxStorage.write(kUserImage, image.path);
+    getStorage.write(kUserImage, image.path);
   }
 }

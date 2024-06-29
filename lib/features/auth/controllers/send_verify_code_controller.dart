@@ -20,4 +20,8 @@ class SendVerifyCodeController extends GetxController {
       },
     );
   }
+
+  void resetCounter() {
+    update();
+  }
 }

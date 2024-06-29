@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:healthy_food_app/constants.dart';
-import 'package:healthy_food_app/core/services/get_storage.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
+import 'package:healthy_food_app/core/utilis/functions/manager_token.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -21,7 +20,7 @@ class HomeView extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                getxStorage.remove(kToken);
+                ManagerToken.deleteToken();
                 Get.offNamed(Pages.logInView);
               },
               child: Text(

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:healthy_food_app/constants.dart';
-import 'package:healthy_food_app/core/services/get_storage.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_colors.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
 import 'package:healthy_food_app/core/utilis/functions/pick_image.dart';
@@ -41,7 +39,6 @@ class OptionsSelectImage extends StatelessWidget {
               IconButton(
                 onPressed: () async {
                   await pickImage(source: ImageSource.gallery);
-                  valueNotifier.value = getxStorage.read(kUserImage);
                   Navigator.pop(context);
                 },
                 icon: Icon(
@@ -61,7 +58,6 @@ class OptionsSelectImage extends StatelessWidget {
               IconButton(
                 onPressed: () async {
                   await pickImage(source: ImageSource.camera);
-                  valueNotifier.value = getxStorage.read(kUserImage);
                   Navigator.pop(context);
                 },
                 icon: Icon(

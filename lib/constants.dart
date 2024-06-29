@@ -5,6 +5,5 @@ const String logInEndPoint = 'login';
 const String logOutEndPoint = 'logout/41';
 const String reSendEndPoint = 'resend-code';
 const String confirmCodeEndPoint = 'confirm-code?verify_code=4030e3';
-const String otpEndPoint = '';
 const String kToken = 'token';
 const String kUserImage = 'userImage';

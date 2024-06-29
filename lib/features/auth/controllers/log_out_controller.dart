@@ -5,6 +5,7 @@ import 'package:healthy_food_app/core/reusable_widgets/custom_circle_indicator.d
 import 'package:healthy_food_app/core/services/api_service.dart';
 import 'package:healthy_food_app/core/services/get_storage.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
+import 'package:healthy_food_app/core/utilis/functions/manager_token.dart';
 import 'package:healthy_food_app/core/utilis/functions/showing_dialog.dart';
 import 'package:healthy_food_app/core/utilis/functions/showing_snack_bar.dart';
 import 'package:healthy_food_app/features/auth/data/data_sources/log_out_remote_data.dart';
@@ -14,12 +15,12 @@ class LogOutController extends GetxController {
   final LogOutRemoteData logOutRemoteData =
       LogOutRemoteData(Get.find<ApiService>());
 
-  Future<void> logOut({required String token}) async {
+  Future<void> logOut() async {
     showingDialog(
       Get.context!,
       widget: const CustomCircleIndicator(),
     );
-    var result = await logOutRemoteData.logOutRemoteData(token: token);
+    var result = await logOutRemoteData.logOutRemoteData();
     result.fold(
       (failure) {
         Navigator.pop(Get.context!);
@@ -27,7 +28,7 @@ class LogOutController extends GetxController {
       },
       (logOutMode) {
         Navigator.pop(Get.context!);
-        getxStorage.remove(kToken);
+        ManagerToken.deleteToken();
         Get.offNamed(Pages.logInView);
       },
     );
