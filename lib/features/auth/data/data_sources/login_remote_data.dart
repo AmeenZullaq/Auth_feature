@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:healthy_food_app/constants.dart';
 import 'package:healthy_food_app/core/errors/failure.dart';
 import 'package:healthy_food_app/core/errors/server_failure.dart';
 import 'package:healthy_food_app/core/services/api_service.dart';
+import 'package:healthy_food_app/core/utilis/constants/app_endpoints.dart';
 import 'package:healthy_food_app/features/auth/data/models/login_model.dart';
 import 'package:dartz/dartz.dart';
 
@@ -17,7 +17,7 @@ class LogInRemoteData {
   }) async {
     try {
       Map<String, dynamic> data = await apiService.post(
-        endPoint: logInEndPoint,
+        endPoint: AppEndPoints.logInEndPoint,
         headers: {
           'Accept': 'application/json',
         },

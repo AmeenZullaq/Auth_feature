@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:healthy_food_app/constants.dart';
+import 'package:healthy_food_app/core/utilis/constants/app_endpoints.dart';
 
 class ApiService {
   final Dio dio;
@@ -7,12 +7,12 @@ class ApiService {
   ApiService(this.dio);
 
   Future<Map<String, dynamic>> get({required String endPoint}) async {
-    Response response = await dio.get(baseUrl + endPoint);
+    Response response = await dio.get(AppEndPoints.baseUrl + endPoint);
     return response.data;
   }
 
   Future<Map<String, dynamic>> delete({required String endPoint}) async {
-    Response response = await dio.delete(baseUrl + endPoint);
+    Response response = await dio.delete(AppEndPoints.baseUrl + endPoint);
     return response.data;
   }
 
@@ -22,7 +22,7 @@ class ApiService {
     Map<String, dynamic>? data,
   }) async {
     Response response = await dio.post(
-      baseUrl + endPoint,
+      AppEndPoints.baseUrl + endPoint,
       data: data,
       options: Options(
         headers: headers,
@@ -37,7 +37,7 @@ class ApiService {
   }) async {
     Map<String, dynamic> headers = {};
     Response response = await dio.post(
-      baseUrl + endPoint,
+      AppEndPoints.baseUrl + endPoint,
       data: data,
       options: Options(
         headers: headers,

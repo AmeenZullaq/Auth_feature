@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthy_food_app/core/utilis/functions/showing_bottom_sheet.dart';
-import 'package:healthy_food_app/features/auth/views/widgets/my_iimage.dart';
+import 'package:healthy_food_app/features/auth/views/widgets/my_image.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/options_select_image.dart';
 
 class UserImage extends StatefulWidget {

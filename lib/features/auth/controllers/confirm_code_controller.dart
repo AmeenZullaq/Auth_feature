@@ -8,7 +8,6 @@ import 'package:healthy_food_app/core/utilis/functions/showing_dialog.dart';
 import 'package:healthy_food_app/core/utilis/functions/showing_snack_bar.dart';
 import 'package:healthy_food_app/features/auth/data/data_sources/confirm_code_remote_data.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/success_bottom_sheet.dart';
-import 'package:healthy_food_app/features/auth/views/widgets/wrong_dialog.dart';
 
 class ConfirmCodeController extends GetxController {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
