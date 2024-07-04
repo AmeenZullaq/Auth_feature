@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
           defaultTransition: Transition.rightToLeft,
           debugShowCheckedModeBanner: false,
           theme: Themes.themeData,
+          initialRoute: Pages.splashView,
           getPages: Pages.getPages,
           initialBinding: InitialBindings(),
         );

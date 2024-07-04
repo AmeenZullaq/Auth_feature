@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_dialog.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_colors.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
@@ -31,6 +33,17 @@ class FalseDialog extends StatelessWidget {
           ),
         ],
       ),
+      actions: [
+        AppButton(
+          width: 113.w,
+          height: 28.h,
+          text: 'Back',
+          textStyle: AppStyles.regular12Mantaga,
+          onTap: () {
+            Get.back();
+          },
+        ),
+      ],
     );
   }
 }

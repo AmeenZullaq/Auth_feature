@@ -5,11 +5,9 @@ import 'package:healthy_food_app/core/reusable_widgets/custom_circle_indicator.d
 import 'package:healthy_food_app/core/services/api_service.dart';
 import 'package:healthy_food_app/core/services/get_storage.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
-import 'package:healthy_food_app/core/utilis/functions/manager_token.dart';
 import 'package:healthy_food_app/core/utilis/functions/showing_dialog.dart';
 import 'package:healthy_food_app/core/utilis/functions/showing_snack_bar.dart';
 import 'package:healthy_food_app/features/auth/data/data_sources/log_out_remote_data.dart';
-import 'package:healthy_food_app/features/auth/views/widgets/wrong_dialog.dart';
 
 class LogOutController extends GetxController {
   final LogOutRemoteData logOutRemoteData =
@@ -28,7 +26,7 @@ class LogOutController extends GetxController {
       },
       (logOutMode) {
         Navigator.pop(Get.context!);
-        ManagerToken.deleteToken();
+        getStorage.remove(kToken);
         Get.offNamed(Pages.logInView);
       },
     );

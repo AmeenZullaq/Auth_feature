@@ -27,7 +27,13 @@ class SingUpRemoteData {
         data: {
           'user_name': userName,
           'email': email,
-  
+          'password': password,
+          'password_confirmation': confirmPassword,
+          'phone_number': mobileNumber,
+        },
+      );
+      return right(
+        SingUpModel.fromJson(data),
       );
     } catch (e) {
       if (e is DioException) {

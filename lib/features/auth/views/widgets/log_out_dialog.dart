@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:healthy_food_app/constants.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_button.dart';
 import 'package:healthy_food_app/core/reusable_widgets/app_dialog.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_styles.dart';
@@ -52,8 +51,8 @@ class LogoutDialog extends StatelessWidget {
           text: 'Yes, Log Me out',
           textStyle: AppStyles.regular12Mantaga,
           onTap: () {
-            logOutController.logOut();
             Navigator.pop(context);
+            logOutController.logOut();
           },
         ),
       ],

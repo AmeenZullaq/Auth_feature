@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:healthy_food_app/constants.dart';
 import 'package:healthy_food_app/core/reusable_widgets/custom_circle_indicator.dart';
 import 'package:healthy_food_app/core/services/api_service.dart';
+import 'package:healthy_food_app/core/services/get_storage.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
 import 'package:healthy_food_app/core/utilis/functions/showing_dialog.dart';
 import 'package:healthy_food_app/features/auth/data/data_sources/login_remote_data.dart';
@@ -38,6 +40,7 @@ class LoginController extends GetxController {
       },
       (logInModel) {
         Navigator.pop(Get.context!);
+        getStorage.write(kToken, logInModel.token);
         Get.offNamed(Pages.homeView);
       },
     );

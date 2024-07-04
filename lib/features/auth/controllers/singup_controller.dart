@@ -5,7 +5,6 @@ import 'package:healthy_food_app/core/reusable_widgets/custom_circle_indicator.d
 import 'package:healthy_food_app/core/services/api_service.dart';
 import 'package:healthy_food_app/core/services/get_storage.dart';
 import 'package:healthy_food_app/core/utilis/constants/app_routing.dart';
-import 'package:healthy_food_app/core/utilis/functions/manager_token.dart';
 import 'package:healthy_food_app/core/utilis/functions/showing_dialog.dart';
 import 'package:healthy_food_app/features/auth/data/data_sources/singup_remote_data.dart';
 import 'package:healthy_food_app/features/auth/views/widgets/wrong_dialog.dart';
@@ -45,7 +44,7 @@ class SingUpController extends GetxController {
       },
       (singUpModel) {
         Navigator.pop(Get.context!);
-        ManagerToken.setToken(token: singUpModel.token);
+        getStorage.write(kToken, singUpModel.token);
         Get.offNamed(Pages.homeView);
       },
     );
@@ -67,4 +66,3 @@ class SingUpController extends GetxController {
     super.onClose();
   }
 }
-// 963 985562216

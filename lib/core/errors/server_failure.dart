@@ -47,7 +47,7 @@ class ServerFailure extends Failure {
     int statusCode = response!.statusCode!;
     if (statusCode == 404) {
       return ServerFailure(
-        errMessage: 'Error 400, request not found',
+        errMessage: response.data['message'],
       );
     } else if (statusCode == 500) {
       return ServerFailure(
@@ -59,7 +59,7 @@ class ServerFailure extends Failure {
       );
     } else if (statusCode == 401) {
       return ServerFailure(
-        errMessage: 'Error 401, unauthorized',
+        errMessage: response.data['message'],
       );
     } else if (statusCode == 403) {
       return ServerFailure(

@@ -8,12 +8,14 @@ import 'package:healthy_food_app/features/auth/controllers/send_verify_code_cont
 import 'package:healthy_food_app/features/auth/views/widgets/remember_me.dart';
 
 class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({super.key});
+  const ForgetPassword({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final SendVerifyCodeController sendVerifyCodeController =
-    Get.find<SendVerifyCodeController>();
+    SendVerifyCodeController sendVerifyCodeController =
+        Get.find<SendVerifyCodeController>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -22,7 +24,6 @@ class ForgetPassword extends StatelessWidget {
           onTap: () {
             Get.toNamed(Pages.vrificationView);
             sendVerifyCodeController.verifyCode();
-            sendVerifyCodeController.resetCounter();
           },
           child: Text(
             'Forget Password ?',

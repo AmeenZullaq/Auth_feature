@@ -32,7 +32,8 @@ abstract class AppValidators {
   }
 
   static String? validatePhoneNumber(String? phoneNumber) {
-    var regExp = RegExp(r'^\d{10}$');
+    // var regExp = RegExp(r'^\d{10}$');
+    var regExp = RegExp(r'^(\+963|0)?[1-9]\d{8}$');
 
     if (phoneNumber == null || phoneNumber.isEmpty) {
       return 'Phone number is required';

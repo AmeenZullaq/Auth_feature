@@ -13,15 +13,15 @@ class SendVerifyCodeController extends GetxController {
     var result = await sendVerifyCodeRemoteData.sendVerifyCodeRemoteData();
     result.fold(
       (failure) {
-        showingSnackBar(text: failure.errMessage);
+        showingSnackBar(
+          text: failure.errMessage,
+        );
       },
       (sendVerifyCodeModel) {
-        showingSnackBar(text: sendVerifyCodeModel.message);
+        showingSnackBar(
+          text: sendVerifyCodeModel.message,
+        );
       },
     );
-  }
-
-  void resetCounter() {
-    update();
   }
 }

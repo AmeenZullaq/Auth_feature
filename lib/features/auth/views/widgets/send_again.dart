@@ -14,7 +14,6 @@ class SendAgain extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         sendVerifyCodeController.verifyCode();
-        sendVerifyCodeController.resetCounter();
       },
       child: Text(
         'Send again',

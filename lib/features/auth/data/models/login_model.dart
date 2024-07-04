@@ -1,12 +1,12 @@
 class LogInModel {
-  final String message;
+  final String token;
   LogInModel({
-    required this.message,
+    required this.token,
   });
 
   factory LogInModel.fromJson(Map<String, dynamic> json) {
     return LogInModel(
-      message: json['message'],
+      token: json['access_token'],
     );
   }
 }
